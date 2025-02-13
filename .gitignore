@@ -1,0 +1,11 @@
+**/.env
+**/*.pdf
+
+## pyc
+*.pyc
+
+## DS_Stroe
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
