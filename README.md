@@ -1,7 +1,6 @@
 # SKALA
 
 - BASIC
-    - intro
 - Front-End
 - Back-End
 - Cloud & DevOps
