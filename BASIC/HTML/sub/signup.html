@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <button class="back-btn" onclick="history.back()">← 뒤로 가기</button>
+
+    <div>
+      <h2>회원가입</h2>
+      <form action="/signup" method="POST">
+        <fieldset>
+          <legend>기본 정보</legend>
+          <input type="text" name="username" placeholder="아이디" required />
+          <input
+            type="password"
+            name="password"
+            placeholder="비밀번호"
+            required
+          /><br />
+
+          <label for="newsletter">뉴스레터 구독 :</label>
+          <input type="checkbox" id="newsletter" name="newsletter" /><br />
+
+          <label for="email">이메일 구독 :</label>
+          <input type="checkbox" id="email" name="email" />
+        </fieldset>
+        <br />
+        <fieldset>
+          <legend>상세 정보</legend>
+          <label for="gender">성별 :</label><br />
+
+          <input type="radio" id="male" name="gender" value="male" required />
+          <label for="male">남성</label>
+          <input
+            type="radio"
+            id="female"
+            name="gender"
+            value="female"
+            required
+          />
+          <label for="female">여성</label><br /><br />
+
+          <label for="grade">학력 :</label><br />
+
+          <input
+            type="radio"
+            id="middle"
+            name="grade"
+            value="middle"
+            required
+          />
+          <label for="middle">중등</label>
+          <input type="radio" id="high" name="grade" value="high" required />
+          <label for="high">고등</label>
+          <input
+            type="radio"
+            id="college"
+            name="grade"
+            value="college"
+            required
+          />
+          <label for="college">대학</label><br /><br />
+
+          <label for="birth">생일 :</label>
+          <input type="date" id="birth" name="birth" required />
+        </fieldset>
+        <br />
+        <fieldset>
+          <legend>과일선택</legend>
+          <label for="fruit">좋아하는 과일을 선택하세요:</label>
+          <input
+            list="fruits"
+            id="fruit"
+            name="fruit"
+            placeholder="과일 선택"
+          />
+
+          <datalist id="fruits">
+            <option value="사과"></option>
+            <option value="바나나"></option>
+            <option value="포도"></option>
+            <option value="오렌지"></option>
+            <option value="수박"></option>
+          </datalist>
+        </fieldset>
+
+        <button type="submit" class="signup">회원가입</button>
+        <button type="reset" class="reset">초기화</button>
+      </form>
+    </div>
+  </body>
+</html>
