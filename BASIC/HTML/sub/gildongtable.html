@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>홍길동의 행적</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #ffecd2, #fcb69f);
+      }
+      .container {
+        width: 80%;
+        margin: 50px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      h1 {
+        color: #333;
+      }
+      .description {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+      }
+      th {
+        background: #f79256;
+        color: white;
+        font-size: 18px;
+      }
+      tr:nth-child(even) {
+        background: #ffe5d4;
+      }
+      tr:hover {
+        background: #ffd0b6;
+      }
+      .footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #555;
+      }
+      .back-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #f79256;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      .back-button:hover {
+        background: #e67e4a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>홍길동의 행적</h1>
+      <p class="description">
+        홍길동전의 내용을 바탕으로 시간순으로 정리한 페이지입니다.
+      </p>
+
+      <h2>홍길동의 주요 행적</h2>
+      <table>
+        <tr>
+          <th>순서</th>
+          <th>시기</th>
+          <th>주요 사건</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>어린 시절</td>
+          <td>호부호형(呼父呼兄)을 못하는 서러움으로 고통받음</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>청년 시절</td>
+          <td>부패한 관리와 탐관오리를 처벌하며 의적 활동 시작</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>청년 후반</td>
+          <td>백성을 구제하며 명성을 얻고 외국으로 소탕</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>장년 시절</td>
+          <td>율도국(栗島國)을 건설하여 이상 국가를 세움</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>말년</td>
+          <td>율도국 국왕으로 통치하며 백성과 함께 번영을 누림</td>
+        </tr>
+      </table>
+
+      <button class="back-button" onclick="history.back()">뒤로가기</button>
+
+      <div class="footer">
+        <p>작성자: 홍길동 팬</p>
+        <p>참고 자료: 홍길동전</p>
+      </div>
+    </div>
+  </body>
+</html>

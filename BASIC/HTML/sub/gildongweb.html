@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>홍길동 소개</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #786eb6;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .profile-container {
+        background: rgb(173, 138, 176);
+        padding: 20px;
+        width: 350px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .profile-image {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      h1,
+      h2 {
+        color: #333;
+        margin-top: 15px;
+      }
+
+      p {
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .wiki-link {
+        display: inline-block;
+        text-decoration: none;
+        background: #846a7f;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      .wiki-link:hover {
+        background: #0056b3;
+      }
+
+      .section {
+        text-align: left;
+        margin-top: 15px;
+      }
+
+      .section h2 {
+        font-size: 18px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-container">
+      <!-- 프로필 이미지 -->
+      <img class="profile-image"
+      src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSEhIWFhUVFR0YFRcYFhgbGBkZFhcYGBsYFxgaHSggGBslHRkVITEiJSkrLi4uGB8zODMtNygtLisBCgoKDg0OGhAQGy0mIB8rLS0rLSstLS0tLS0tLS0tLS8rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSstLS0tLS03Lf/AABEIAMABBgMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQQFBgcDAgj/xABBEAACAQMCAwYEBAQDBwQDAAABAgMABBEFIRIxQQYHEyJRYTJxgZEUQlKhI2Kx8BUzciSCksHR4fElU6KyCBdz/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAECAwQF/8QAJxEAAgICAgICAgIDAQAAAAAAAAECEQMhEjEEQSJRE2EygQVxkRT/2gAMAwEAAhEDEQA/ANxooooAooooAooooArjdXKRqzuwVVGWZiAAB1JPKontZ2ngsIDPO2ByRR8TtjIVR1NYNcXupdoLggEx26sDjJEUYyOZG7vjfH9Kq2Sk30aR2q74ba28sMbzORkEjgTHrk7kfIVWLrvuucB0swsZOAz8WCRzAYbVYOzHYvTrWURnhuLwrxlpfM3zCbqg9CdzTHvOh/FWTwZT8Tbv46wxksREo4TxbbHhJOPbasFmg5Urf7LPHo0fsfr631rHcqpXjyCPQqcHB6ipus47i9Ujk05YVI44WYOvXDNxK3yIP7GtGzXQigtFJmjNSBaKTNLQBRRRQBRSUtAFFFFAFFFFAFFFFAFFFFAFFFFAFFFFAFFFFAFFFFAFFFFAFITS1E9qpJFs7lof80QSGM+jBDj96A+fe1N9NrmptHC/8CM4jyfKEDBWkwPiYkk/IVrtz2eEFrHb2JEKKuXkClnIAy3Av5pGPrWNdygi/HHxZljzEUjDHHG7MuFB+QO1b1bOVPAc7dPSuHy8jg1FrTN8UU1a7I9VMsSEtcQ4wXHCFmkCjOCAMjOOQwd6TVFlu4eK2lkt2IPEjIokdTsAeLJjBwd8Zwa96npH8b8XErTXC7RLJKRGgOxIXGBtXnXdegs+JihluOEcUcYy38odugyTjO5wTisYReuJZtezLdU0y60ycXltiJsGSSBWZwkecEuxADKT9iRU1L35MBgWihsDOZDjPXpXJ4r7VZB4hKR8+FSRGudxn9Zx13Hz5VPRd3emoytMFaRTnd+FSf8ARkDH9+1dcssUvl3+jLhZF6f2w1u8bit4fDjPImIBSPZn+L6U+/C6/wAXiC5QH9J8Mrt0xw4xz61a2ujxIPjRFLyMqFhlN1CcJPmzvw4OcV0tZSSc8IJPHKeJhwJjyEBxsSFGRtjeud5r6RfhEg9B7wJY7hbLU4RDK2OCRT/DbOwz0AJ65rRwawjtOr6teK1kjPFFiMy4ITLSDPCfb/v0rcrZOFVBOcADPrjrXbjTq2ZSS9Haikpa0KiUtFFAFFFFAFFFFAFFFFAFFFFAFFFFAFFFFAFFFFAFFFFAFFFFAFeXQHY7ivVFAZz3i92kN1CXtIkhuIxlOBQivjfhbhA39D0NQfdZ2y8f/Yr1uG4hBw782VPiVyfzKOvUCthavm3vysoY9S4oSA7xhplXAw/IHbqy8/8AvUTgsi4yJTa2i4dr+9aNOKGwAYnYT9Ad88Ckeb2blTLQLdVtmvL0mOE+Z3c5kmZvTPME8hyPXPSM7r+7/wAfhu7lf4Q3jQ/nweZ9E/r8qsMWn/4xeNJID+Btn4IIh8MrLzYj9PL6YFYrGm+EP7Zfa2xlZXuparlLJfwVmDgSnPHJ7gjBbPqD9amrHuWtSCbmWeVj+YuAf6Hb2zWmWVqsahVAAAxgDAHsAOQpxit4xjDUUUbvsyibuYRN7S9niPodx91Kn96jde7E68YmhW9WeJiMgsUYgb4OcnB6ji3raTSVDSbtpAweztta01xJFZssQwZIo38SNsAAkLkspO52zvWt9ku1EN9D4kJwRs6HZlbAyCPT3qcNZ72h0NrC6Gp2ieQnF3EP0sRxSKB6Z4iPbPrUNr0QaJRTXTb9Jo1ljYMrDIIp1UpgWikpakBRRRQBRRRQBRRRQBRRRQBRRRQCUtJS0AUUUUAUUUUAUUUUAUUUhoCtdv8AtQun2jTkcTk8ES5+JyCRn2ABJ+VYZ2A7PNqd09zdsWjEgaRmOON2Iwm/rsPltUl3/atx3qW+fLDEM/6ny2ftitA7H6UtpZW0eCF4fFmkHDwgkcZLk745DYZ8tY5puEddsvjjbtnfvD1cWWmysmFZlEUXsX8oIxywuT9KXu0ZjDEIrYpbonCsjnheRsZMgjxnDEk7kc6pUt7Jq+oxYj4rO3bjIOwwQ3CzDqxK8ugNbPpakJvy6fKrYcfGFvtkTlbHgrlc3KopZ2CqOZJAA+ZNV/tV2ujtcRIpmuHIEcK/ESc4Leg2P2qsavC627XmsScSKQVto9lzvwpz3P1+tWshIm7ztxxt4dlbyXLY3f4I1zyJZqYTWeqT/wCbeLbj9ECEn5Fyc/aq3pPfJZllje3eFCccQKlVyebAb/M1p6srAMCCGGVI5EHfI9qzk/1/00gospMnYRm3bULwt6+IRUW9tLDIYLXWuKUHBiuG4uIkfCc5Gee1WXvA7QiyspJAQJGBSIerkbH6c/pWPdhe72a/VLppeCIytxHGXJXfiXoSWyPoaRV7+iZJXSRb9C7RT6RcGG+i4IJnLAruqnAHkGT5Rtt0FbJZXscqCSNw6MMhgcisQ79ySbOAb569SdlH3qz9zGm4jeQmWOWJmguIs/w2dCuJOH9QAxttzrSvaMn2agKWuS5Gc+u3yr2DmrEHqivDuAMk4Hqa9UAUUUVACiiigCiiilgWikoqQKKKKKAKKSigFooooAooooDyTTKC9OSsqhCXKx+YHjAGQV+nQ+ho1W3lZf4MvhuNxlQyn2Yc8fIim2kS3R2uYogRyaNyVb/dYAr+9AZn3v8AdrPczG9tAHdlAlizhjgYDIeRONiDVM7S6trUVssF2hihlBjyVXicBd1JBJxivpES+bhweWc4254xn1qp96HZw3tmyp/mxHxIhnHEwUgrn+YEj54qfjKuS6Bm+jTmy0JpBnxblmC/q4WJXP0RSfqKumu9ok0nTYIFOZvAVU6hcKA0hHoDnA+VZHq2u5trKB0KtbArIh2PlcAfdVFQ2pahcX9952LvNIqKv5RxNhQB0Vcj7VMlbIRufdDpjNbG+n801w7OrHdgjYH/AMiCftTPv1s5pLKLwY2k4ZsuFBJwY3UEge5/etI06yWGJIkGEjQIo9lAA/pTYy8ROOXKspSUWjSKvRkGp90oewgEXCt3GmZCTgSlvMVJ6EZwD7VYO6W01CCB7e9j4YoyBCGI4xuSQCDgr6V07y+2stgYY4ERnlycvnAA25A8yatPZy+aa1glfHFJErtw/Dlhk8PtUSk5R2XVcimd6nYy6vzCYHThjypRiRguRl89dgBirpoekpaW8Nuh2jjCj1bHxNj3JJ+tNL3tII7+1sVUEzJI7nqoRcrj5kGs17FX0s2vzO7FiGuU3JwqI4CqByHT7VHcaF/In++CN4zZXyDe2nBPy+LB9M8JGfetTspUZA8eOFwHBHXiAOfnVc7XaV+KtJrf8zJlCejrup+4FRfc9rXj2XgPnxLZvDIPPh5r9t1/3amL0VyJ2XCT+Ky8LKYvMHG5LEEAAEbYBzn5U4lmC4Gdzso6kgE4+wrjJbFUCQBE3wNtlBOSQBzPtXeKAAkjmxyx33OMfSrFDnCpcB3VlPDgoSCBvncDYnbnTqivMjgDJOAKEHqm17eRxI0krqiKMszHAH1NUjU+93TYnZA8koXZnjQsmeg4s75xWOdrO3z30nizLxIpPgW2f4a/zzY3dvb39Kjb6Btv/wC0tNyP4z8BOBJ4T+H/AMeMVbrO7SVFkjZXRhlWU5BHsa+a+x/atriY2t4UaKZSqAqqqpxsowNlI2+dT+gapNodwA3E+nzNg9TCxPP25/Ue/OeLJN8Bpaa2V4kqLJEyujjiVlIIIPUHrTkURAtFLRVgAooooAooooAooooApKWigGN1aSNIjrMyqvxRhVIf5kjI+lLHEyDzylsEklgo2PIHAAwKeVG9otKW6t5bZmZRKhUsvMdcj6gVFAirzX5JBi0QFTynf4Nv0Lzk+ew96hrzsss2Gu5JZ2P6nZU+kaEL98mp+wuj4i21yipKFzGyf5cqrjPCPysP0n6VWO3/AGyENpdPbhg0bCCOXA4PEfnwE/EUGSTyzt0rSLS/2UkmZF3lWkNveNDCMKqA7sWwxySuTkjHp0pn3aRs+rWeBk+LxHG+AASSfTAqy9n+x6CCLUrvjmBPimJV4uJDk8UhJycnzfKrZo/4WbWLK5hjXwpLaQJhOACSPO5AA3AyM1Dmm6NvxtK2afqV4FHD1ppGwArlq8B49+vKuCx551xyb5M6YRSiqKZ3tdlpbyKOW2XiliYjhG2UfnjPoQPuauPZTT2t7OCCQ5eOJVbHLIG+D6VUu2Gv3EE8EKyLbQyjL3TpxKuPynbAPzq322v2ZUYvbdjjc+LGM7c8Z2zV7dKyjaTKl2tv1i1O3uI4ZbiS3ikEqRKTwCQeRmPIbeJtUt2TFhO0uoWqFZZdps5DBhvuucKTscjnTLtd2x8EhbRrZ+IZaTxozjGduBTxE1CaLp0i201taq0s12czTFTHBGDnPCx+M7nl1q22tFPejSEO9UXs8Pw3aCWJdkuI2JHuQJAR9Q/3NXuxtPDjRCeIoqqTvvwgDP7VTtRiP+O2zLjaME52O/EvCPUnjB+lVxqnRbI7RpopaQUtamAE1lvfR2sEcJ06Anx7gAMQQOCMtvxHpxAEfLNahINq+Te1dhM1xdyszzLFcNHJNgkcQyBxfp5fLapStkCdrr6BFS0tcGOI8TupyHfkd/zeufeqsDXtlJJ/v3otyoYFgSudwDgkemelX6BK6NacCm7kwEjI8MHbxJfyqPVQRlvYY61abTt6LgfhryNQki8DyKeHc9SOQHKqdqurNMI0wEjiGI415LnmSfzMepqNzVewaNaa/c6NMht5zLaSeYITlGGdwOity3WvonQNWjureO4iPklQMPUZ6H3ByPpXyj2di8WG6iJJ4YfEjTmeJTnyDocDfHMCtd//AB+1Vms54GORFKCnsJACQPqCfrUP7JRsdLXITL6j716Dj1FLRFHuikJpakBRRRQBRRRQBRRRQBXPg3zk8uXT517oNAVPVommueNTg2w4Ix08aZR5z7Ih+uT6VWe9zRf/AEkpENoXVyOZI3DN7nzZJ+dXbWbVEdLgoTwNmQrnPDwsAzKPj4SfQ7E0tzPDIhbxI2jIIYll4cY3znblmrRlRDKRo1ybjSVNrjxPw4RRts6oEI9jkHn61W4tZlsZ9LEkaxYIiZNsrGQkRZj0yxdvpTTTdC1CGaafSF8a0aUgKzAK5HNlVmAIByAw5/Kq53h3F+95HHdxIsiRiRYovMAu7niO+ThSfYCqKDTNpTuOz6VDLNGJF3B3RvUeo9jzrj4Apv2S7SQX1us0DDkA6dUbAypH95qVkh6iqSjZEJ1oZSWyMOFlDKeYIBB+YNRsnZWyO5tIM/8A8k/6VO+EfSgRetNl+RGW2i28e8cESn1WNAfuBTzgp2IhShBSmRzGUm1VKyg/Eaks6g8MLMuejcKAH5YY4x86td/IW8kfxHYH9PqT9K96PpwhQKMe+BgfPFIorKVofUgNEnI1HtdEUlKhGHIkc1jmhn/DtYvbSZQ0V/mSDjxwOxZmCEnbckr9B61q6zdag+2XZWLUIPDY8Mq+aGUfEjjcHPpsP69KlSsOFGdz92X42SbitTYSJ8LI3iQvnoFOCPpt7VVNX7mtRiOYxHMvQq4U/wDC2P61pHYzX9Tuk/DjwlktZ/CuZXySyrjdQNuI4YH6GtFkuBkjFXc2lshKz5L03sbeTrO0UJYW5KybjPEvNVH5iMHlUC6EbGvrG40GK2QGGUQKbr8RLxOQrjcunMbHY45bb5FYD2x0Oe4vZprW1laGWQmMpE3Cw2BYHGBk5P1qU7dIiiF7Gx8V7AMkefmPZST/AH71tXcdpnh2lw+2XuGC458KYXl03DVhBsZ45fD4JElBxw4ZXydthz3qwdndVvNIullaKRAfjifiVZBywfUjn9BSUXREdOz6KiiOTzp3EvDgjpXLQdTgvoFubdtm5+qsOasOhFPHiZeYz7iuVRa2dSnGSH8FwG2POnAqEQ08t5iCB0rRTMp462iQopAaK1MRaKKKAKKQ0UAE1Cdre0MdjbPcSHHCPKP1OfhXb1NTLtXzZ3tdpTqF4I4HDQQ+VCOTN+d/dRyB+dEuTpAk7zvxujxCOKFB+XiDMR8/MAapmorqWpP4xglmLHyssJ4efIEDGM1Y9L1a2tkRYLGBnUf50y+JIx6nGcL1wByrpL211C5ZUE7IuRgRjwx+1dK8Zr0ZfliN9O1XVZP/AEq4leGMAPM7eWSOBRlgWH5SOh57U47O3aTa7bGNH8IJwR+JuzRLauFY53w2eLf1rgjPNHI8jEvf3sNp4hJ4vDQji39/KD8qvB0+OLtBCygANZkKPQoCo/8AiMfSsZRUbNo7aDWuwLpMbvSpjbTfmQHCN7egHsQR8q76f3mz2rCHV7Zoz/70a5Q+5AJH2P0q8KSKa66HNtMYlBlET+GCAfOFPDsdueK54yvs3ljXZIab2ltJ14obiNwRnZhnHqQdxT5L+JgSsiEDmQwIHzPSvnJZrIaezorT3jqzThiwSHBI4mC4HPAAPMmq9ocRNreyYGESIHyjOWmGMHmNlateD9M5z6dm7VWakj8Qh4d24TkLn1I2FVHtV3lxxxt+FQysOpyq423HU7Gsu1XtDNetl8RwxkeFAmyeX80mPibYVwF5ywB7/sK6MXjX/Iwnmp/E1nRO9TTPA8SSTwZM+eMhmfOxyCB5gehrkO+zTePGJuH9Xh7fbOf2rFLjRFZ+JCVU8xz+3pTTVLCKLEali/Ns9B6YHWol4ritsssyk6R9RaF2xsr0lLedXbhyVwwbHyIGfpTZpjxsh5hsb/37ivmuPTb23ih1BVeOMyfwZMgeYegzkg4PTBANbx2P7RJqUX4kLwSKQky9A4xuD1BH9a4csGkjtwSSbTLXG/TrincT8qj1blXae5VFLMcBRkn2qsWaTWjN+yfaNNPmuVu4J4/xN7IVkMZ4AMeVc/mJ3wB6itO0uQyRLLLF4TsMlCclfQNjbOMVWu01uL2AwSqFjJzk7uCD5WQ5wpBwf2qoWWr6nD/sQvIHEYb+K6M06hAMIVyMk8SqCdskVo5rsw/HJKzVdQSN14XRWXP51BGfXBrjNKI0zyAwAB6nAVQPc4FZ/YSM9w0E08ko8Pgm4yMcUnDxcKqAq8IzgjfIrqNWlFvGrNxu5Igx8QjZiELZ5vwkKD6AnrWcslJybNlhlyUPs4dp2kup1WDDTR54BnCAj4iT+bhA2J24t6aXvZDUzb73MVwWHE9tPErLxEbhZeeffardotglrA0spVcLxSv0UL0B9B+9V7sr20uNRvGaGJUsowVZm+NmIypGOvLboDXCvMyOLyRSpfZbLGF8UZBoXaG90ufhVpI+B8ywMTwtjGQy8skADNaZ2h7xJ7nxGsXaGKNT4bADikYLnfiGwzkVJd7/AGZW6tTcov8AHtxxZA3eMbsp9cDcfKs40/Woxb5WNsKvmxyGeh9uVdUPIjmgpwL+Lhxub/I+kb72Zv8A8TaQXP8A7sSsf9WMN+4NSYWqN3U69afgobP8XE0w4yEDHI4nZgoyBnAPStDWH3roSs5eSWj3ATjeivSLiitTJnuiiihAV5dqUmqH2w1gzzf4dC5XADXbrzVDyjB6M2CD6DNKshsiu8DWZbpRBA/h27Z8WQHDSRqcOynpHkhQfzE45VkeoSrxnhUJkcKqvJEGeFc9T1J6kmrx2kv0S2MgwGnIWEDOFt0HkA9AR5sfzj0qg2cZky2Nhv8A1ru8TF7MM0/QqtyXO55/epzQ7bL7b4HT6VEabb8TNtyzj96sfZxuGbDev/n9s12vqznHF7bmLStLuQNor0O+feZjv/wgVbu3cRgvNMvT8PimFyOQEilQSfTzMfpSdmtHN5oc9k486PKqg8w6uZEJ+pH3rxY8Wp6H4L58eAeGwPxCW35Z9CwGPqa8d7PQWtl94ahNW7Q8Lm2tU8e55sM4jiHrM45fLnUBJ2mluILS2sz/ALTcQq0snMQRgcLuR0YsGC1HdubhdKtobWDMa3DHxZs5lIG7N6l2zsenTFZRx/ZrLJ9DbVh/i98bSHEdpE3FcuoAMhUgZz1J8wGfc1X59L8LStQlRQEfUFRfXw43YLj13Kj71N31+mmad4US+Hc3h4ymxMcZ2HF7hAB82NT/AGh0YxdnHjJywVZnYdSZRISMfPH0raLqjF7syK7kPEcbev74p3aMWG35f+oqPu23B/lH9KldJHk5da9KG2cElSHU14IYWY/EfKg6EnH7YzUh3cdhhdSLcXPmhByV6uwPJv5etV6/ie4uVgjG4IRf9bEZJ9cbfQVvuhaXHbRRwRDCIvD7n1J9zzrlz5OUjoww4xsyTvv067/FByHa1CDwQqngjwuGBxsDkZz6fKpHud7Z2MEP4OUGKRnLGVj5HYnAyfy4GBvtW0xSDl0qq9rO7eyvQX4BFMRtLGMHP8y8m6VyOmqOlP6LGLMHcYIO4OeY9aj9VmQyx24YZCtKy/6cBM+g4jxfOOsy7Oa/daNcf4dfnMDbQTHdVGdmUnmvqv5flV4s54IHuHeRVJZSzsRl14Bwv75JfGK55tRfF+zVNy7ITtMt2OFYwrO/iL4WfKIuH/McnkQ3Acj1xT7s5onh+GHcySOfFlkY5ZyoCpvjkPL9Rmjs+ha5upH48twcIfdlQrxBD0HMnA6mvGvOSt2yNIHjRFj8M4cuwJVQf5iyj6D0rx/JyzlmWGPXs3TVcivXkn4WecSkJlgVYjI3IPyOV6dRn0qxdkdKGBcNjJGIhkHgTkNx+YjbbljbrTHsXZwx6ebq5mM88sT7yHJHFlfDQEncnbPM/Kpm3u0sbESTHaNBsObNjyooPU7Vp538Y44S230X/O5Ny/SKJ37doGBj06PIBAllx+bJIRffcE/ard3cW7pYwo9uIOEbDOWfI3dxjZiaa9mOz8k8x1LUEBnf/JiI2gj/ACjH69/pv61eEjrl83PF414+NaXbM8cd8mJgEYPI7Ee1fNq2ptby6t8ZSJyCp6pnA58xgj7ivpYJXzx2jaRNYvWQkIrZnIAOIS0QY4I3wSh+lb/4pNqUSXk4TUgm0xogjQqnC0iPHJjDxNxqRvjcV9MWBJjXJyeEZ+1Zbp/d/cyTxGaaN7RSkoKDBfgwyjlsCT9hWsINq9nHGSXyM/JnCcrieqKWitTmCiikNAVzt92jFjaPPzf4Yx6sRsT7DnWYaBbuumtM2TPevxOSfNiZwM5PURs7AVz75NZa9vYdLgYEK48QjfzkA7+yJk/+KsurW/DaqqABY8DlkBUjfkPYD9hV4rRVmedt5/EnCAgJGoQAHYYxkD2zt05VH2JCKV/v1ppq95xzZzzOfTma9LJxMcdMDHvtXsYYqMUcORtu2PNPmAclTj1+xp7bT4cP7/8AM1H2FsQSc9P+VPeE8Pvz/c/96vIqab3c3QS5uIiWxKqSrn9Q4g4HXkB9qf8A+Fmy1Iyov+z3xxLjklwASGPs+4z6kVnemXT5jkRsSwtxx+hIzlT7NsDWx9ndbjvIeMDBG0kZxlHHNT9eR67GvJzY3Cd+md2OSkqZSdVkh0yWSKxgMt7eNxrHnZByLMfyRg8TY96rmtX0enBnvCt7qMuGwwBSIDdQo5IgIzsMnFWztpe2+kpLcqC91cuSoY5YnoM/liT0H/OsEvJ5JXaSVi8khy7HmS39gYquODmyZOhzcXrzyvLM7PJJ8UhH9AOSjb7VcL/vCuGsGsmhQqYhGJFJ+FcDJHQ7CofTLMEDCgfMfOpAWQ546/8APauz/wAsZJfo5nmplfkjDcOPQZ22+GpfSIf79gDXaHTznBHXffrt+/Ou7wGKOR+YEbf/AEPP710cOKMeVug7r4zLqAcA4UPK2+wZsqvv+Yj6Vt6L9KyvuThy9w2B8KDI+bZB/ateWGvLk9ncugjpwLmuax04ihB51m0XRC9sOzMWo2xhkGDzjfHmRxyI9vUdazfsJfNBOdNv40eaIkWrOOo34QSORA4lPzFbUq4ql94HYgXxilifwp42GJOpUHPMdRuRWU4qap/0XTaJDTtPZFJbd2bikbHNjgbewwAPYU3ayD3AHBtEPGY4IDSkcEYJ64XiPt5asenLJ4SCYgyBQHI5FhzIHTPOuskea86HgLHN5E7Zq8tqir6XoaxQxRvh2jHPH5skkgfMmq/Bbfj7zx33tbRysC9JJlPmkPqFIwPlWhTWQZSp5EEHBwcEY5jlXO102KGNY0UJGgwB0A/vrWK8Gfyku2W/IhmiV2qK1HtRbRHAEkhG38OMsPvyrhF21tWwHWaL3eJgPuM4rnj/AI+cUyXmTJeedY1aRzhEUsx9AoyT9qxvR4JJP8R1COIOLuUWkIk+FlnlVCxz+X4R862tUjmj8jLIjDBwcgg8xTHVNELW3gxKoKvGyDkBwSq2R9Aa7PGxyxOq79lJST2c+7/TLi3so4Lpgzx5UYOcIPhGeu1WYCkWvVeqjAKKKKkCVGdo9VFrbTXLbiKJnx6lQSF+pwPrUkxrGu9btQ16f8KskaRi6+KygkYGGAB5cOSMty2p2Bh3IaGbme51GfzNlkUnq82Wds+wIH+8au2o26tayq2CoQ5Poo5tt6DJqZ7vNC/B2EMDDD8PHJ/rfcj6bD6VymgCyvGwHCxI35cLg9PTcitU9lZHznqSZkDfq3/qdqe6XEeID+bI+9d9U0t4neJx5omKnnvjI+3/AFpzBF5lYD+969fHtWcE+6OtvGfEx6kfvin8locHHL/wMVOaHpAlPFw5O/8A2IqXh7PPsCuBnb9udJTimQouik2tq48w267fJqey3t1FIk9u/BINmUZw46Bx+YDf71erbQAgOdwR9vl6VzTQQDkji6b496ylPHLTNFGa2jLNYFxeTme5fibl6KoGPKgzt6/Wl03QyxLcORtj9q1J+z0eNoxjPp19akE0P+GFC9eQFQskIqkS4TbM4aw4dhyHLp0O/wBaeWltsQBnn0PTPL3q/TdnA6gFdx7YqPvbqG0cQRQme4bcRIBkD9TtyUVWXkxSC8d2Qa6OeeD88Vw1jSWNpOiKxdomCqOZbGwrStMiWaMMY2Q8mRh5geo967jRUG4G/TNYvykzSOCnZUu6bsw9rahpBh5cOwPNegUj1Ax96vyoBSQxcIAroBXFKWzpPHhjOa9iilqtkiUYpRRSiDyfajFe6KUDyq15lhDDDDI9K6UVNA5R26rsFA+lemiB5gH6V7ooDlFAq/CoHyGP6V0xS0VFASlpKWpAUUUUBkXe/wB4jWztZQDEhQF5Cfh4hsFHrjfPTY087F949nwRRXET2soRY+ORCEfhAA/iY5Hbn61E9pe7e4uNZFy6q1vNOjOVO6pGi54wfXgxt+qtga3VhhlBHQEAj7GppJBI6Ic7imd9pwkYNnGOfuM5p8opahaBm/aHu8kub2SfxVSNkVQuCSzAEFm9Py/aueg9gXhcpLiRP1DkR9eXWtLoxW0c84qkUcE3ZF2WhQxZ8NMZ6dKcNY09ryc59qz5y9luKI4acd8tnPLbkPSvQ00VI0U5sUhsloo6V2EY9K90VDbZJ4dMj0pjpeiwwFjGgDOcu53Zj7sdzUjRUAThpaKKAKKKKATFFLRQBRRRQBRRRQBRRRQBRRRQBRRRQBRRRQBRRRQH/9k=""
+      alt="홍길동 (신동우 화백 그림)">
+
+      <!-- 홍길동 소개 -->
+      <h1>홍길동</h1>
+      <p>
+        홍길동은 조선 시대 실존했거나 전설로 전해지는 인물로, 신분 차별에 맞서
+        의적 활동을 한 인물이다. 조선의 양반 홍 씨 가문에서 서자로 태어나 정식
+        후계를 잇지 못하고, 신분 차별을 겪으며 도망자로 살아가야 했다.
+      </p>
+
+      <!-- 관심사 -->
+      <div class="section">
+        <h2>🎯 관심사</h2>
+        <p>
+          홍길동은 부패한 양반 사회를 타파하고, 신분 차별 없는 세상을 만드는
+          것을 꿈꾸었다. 그는 불의를 보면 참지 못하는 성격으로, 가난한 백성을
+          돕고 부당한 권력에 저항했다.
+        </p>
+      </div>
+
+      <!-- 업적 -->
+      <div class="section">
+        <h2>🏆 업적</h2>
+        <p>
+          - 부패한 관리들을 혼내고 백성들에게 재물을 나눠주었다.<br />
+          - 도적단을 조직하여 강력한 의적 활동을 펼쳤다.<br />
+          - 조선을 떠나 율도국을 건국하여 왕이 되었다.<br />
+          - 후대에까지 전해지는 "홍길동전"의 주인공이 되었다.
+        </p>
+      </div>
+
+      <!-- 좋아하는 사이트 -->
+      <a
+        class="wiki-link"
+        href="https://ko.wikipedia.org/wiki/%ED%99%8D%EA%B8%B8%EB%8F%99%EC%A0%84"
+        target="_blank"
+      >
+        📖 위키백과 - 홍길동전 </a
+      ><br />
+      <button onclick="location.href='gildongtable.html'">
+        주요 행적 테이블 보기
+      </button>
+    </div>
+  </body>
+</html>

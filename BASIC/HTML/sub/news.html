@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오늘의 뉴스</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        font-size: 24px;
+      }
+      nav {
+        background: #555;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+        display: inline-block;
+      }
+      nav a:hover {
+        background: #777;
+      }
+      section {
+        padding: 20px;
+        background: white;
+        margin: 15px auto;
+        width: 80%;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 5px;
+      }
+      article {
+        margin: 10px 0;
+        padding: 15px;
+        background: #f9f9f9;
+        border-radius: 5px;
+      }
+      footer {
+        text-align: center;
+        padding: 15px;
+        background: #222;
+        color: white;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header>
+      <button
+        onclick="window.history.back()"
+        style="
+          position: absolute;
+          left: 10px;
+          top: 10px;
+          background: none;
+          border: none;
+          color: white;
+          font-size: 16px;
+          cursor: pointer;
+        "
+      >
+        🔙 뒤로 가기
+      </button>
+      <h1>오늘의 뉴스</h1>
+    </header>
+    <!-- 내비게이션 -->
+    <nav>
+      <a href="#politics">정치</a>
+      <a href="#economy">경제</a>
+      <a href="#sports">스포츠</a>
+    </nav>
+
+    <!-- 정치 섹션 -->
+    <section id="politics">
+      <h2>🇰🇷 정치 🇰🇷</h2>
+      <div style="text-align: center">
+        <img
+          src="https://flexible.img.hani.co.kr/flexible/normal/859/529/imgdb/original/2025/0217/20250217501515.webp"
+          alt="정치 뉴스 관련 이미지"
+          style="max-width: 100%; height: auto; border-radius: 8px"
+        />
+      </div>
+      <article>
+        <h3>인권위 ‘윤석열 방어권’ 반대의견…“제2의 서부지법 사태 우려”</h3>
+        <p>
+          국가인권위원회(인권위)가 윤석열 대통령 등의 방어권을 보장하라는 취지의
+          권고 및 의견표명 결정문을 내놓는다. 지난 10일 안건 의결 당시
+          알려진대로 결정문 상당 부분은 윤 대통령 쪽 주장을 그대로 가져와
+          헌법재판소와 사법부의 권한을 흔드는 내용인데, 이를 조목조목 반박하는
+          남규선·원민경·소라미 위원과 김용직 위원의 반대의견도 함께 담겼다.<br /><br />
+          17일 한겨레가 입수한 ‘계엄 선포로 야기된 국가적 위기 관련 인권침해
+          방지 대책 권고 및 의견표명’(권고 및 의견표명) 결정문에는 ‘인권위원
+          남규선, 원민경, 소라미의 반대의견’(반대의견)이 함께 제시됐다. 이들
+          위원은 “윤 대통령은 국가원수이자 행정부 수반으로 권력의 최정점에
+          있으며, 실제로 이를 통해 그간 검찰과 공수처의 출석요구에 응하지 않았을
+          뿐만 아니라 경호처 직원 등을 동원해 수차례 체포영장에 불응한 것은
+          주지의 사실”이라며 “대통령이라는 신분을 이용해 오히려 정당한 법 집행을
+          방해하여 왔음에도 불구하고 ‘대통령의 인권 보호’에 피권고기관들이
+          소홀히 해 왔다는 다수의견에 동의하기 어렵다”고 밝혔다. 김용직
+          인권위원도 ‘인권위원 김용직의 반대의견’을 따로 제시했다.<br /><br />
+          인권위가 지난 10일 전원위 통과에 따라 다수 의견으로 제시한 권고 및
+          의견 표명은, 계엄 선포가 외려 야당의 잦은 탄핵 소추 등 ‘국헌 문란’에
+          맞선 ‘고도의 정치적·군사적 행위’라는 황당한 논리를 폈다. 이에 대해
+          반대의견은 “국회의 탄핵소추 의결권은 헌법 65조에 따른 정당한 권한
+          행사이고, 탄핵 여부는 헌법재판소에서 판단할 사안이지 독립적 국가
+          인권기구인 인권위가 적절성 여부를 판단하는 것은 적절하지 않다”고 선을
+          그었다. 계엄이 ‘고도의 정치행위’라는 주장과 관련해서도 “국민의 기본권
+          침해와 관련되는 경우 당연히 헌재의 심판 대상이 될 수 있다”는 앞선 헌재
+          판결문을 인용해 반박했다.
+        </p>
+      </article>
+    </section>
+
+    <!-- 경제 섹션 -->
+    <section id="economy">
+      <h2>📈 경제 📈</h2>
+      <article>
+        <h3>증권 시장 상승세</h3>
+        <p>
+          세계 평화엔 관심 없는 트럼프, 우크라·유럽 패싱하고 '적국' 푸틴에 손
+          내민 이유
+        </p>
+
+        <!-- 오디오 뉴스 -->
+        <audio controls>
+          <source src="../file/202502171201454618.mp3" type="audio/mpeg" />
+          브라우저가 오디오 태그를 지원하지 않습니다.
+        </audio>
+      </article>
+    </section>
+
+    <!-- 스포츠 섹션 -->
+    <section id="sports">
+      <h2>⚽️ 스포츠 ⚽️</h2>
+      <article>
+        <h3>축구 경기 하이라이트</h3>
+        <p>
+          17일 오전 1시 30분(한국 시간)<br />
+          프리미어리그 25라운드를 치른 토트넘이 맨유에 1-0으로 승리했습니다.<br />
+          자세한 내용은 영상으로 만나보시죠!
+        </p>
+
+        <!-- 유튜브 영상 삽입 -->
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/3ZTSBQyNU9Y?si=PeABwCOpG7pagpxH"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </article>
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+      <p>© 2025 SKALA 뉴스.</p>
+    </footer>
+  </body>
+</html>
