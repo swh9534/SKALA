@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .flex-containor {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        height: 200px;
+        border: 2px solid #000;
+        margin-top: 5px;
+      }
+      .flex-item {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+      }
+      .grid-container {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3열 분할 */
+        gap: 10px; /* 아이템 간 간격 */
+        padding: 10px;
+        border: 2px solid #000;
+      }
+      .grid-item {
+        background-color: #2196f3;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="javascript:history.back()" class="back-button">← 뒤로가기</a>
+    <div style="border: solid 5px; padding: 20px; margin-top: 100px">박스</div>
+    <div class="flex-containor">
+      <div class="flex-item">1</div>
+      <div class="flex-item">2</div>
+      <div class="flex-item">3</div>
+    </div>
+    <div class="grid-container">
+      <div class="grid-item">1</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">3</div>
+      <div class="grid-item">4</div>
+      <div class="grid-item">5</div>
+      <div class="grid-item">6</div>
+    </div>
+  </body>
+</html>

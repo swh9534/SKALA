@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 선택자 예제</title>
+    <style>
+      /* 그룹 선택자 */
+      /* 선택자1, 선택자2, ..., 선택자n */
+      p,
+      #title,
+      .red {
+        color: red;
+      }
+
+      /* 자식 선택자 */
+      /* 부모 선택자 > 자식 선택자 */
+      .box > p {
+        color: red;
+      }
+
+      /* 하위 선택자 */
+      /* 선택자1 선택자2 */
+      div p {
+        color: red;
+      }
+
+      /* 인접 형제 선택자 */
+      /* 이전 선택자 + 대상 선택자 */
+      h1 + h2 {
+        color: red;
+      }
+
+      /* 일반 형제 선택자 */
+      /* 이전 선택자 ~ 대상 선택자 */
+      h1 ~ h2 {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="javascript:history.back()" class="back-button">← 뒤로가기</a>
+    <!-- 그룹 선택자 -->
+    <p>test</p>
+
+    <!-- 자식 선택자 -->
+    <div class="box">
+      <p>lorem 1</p>
+    </div>
+    <p>lorem 3</p>
+
+    <!-- 하위 선택자 -->
+    <div>
+      <p>lorem 1</p>
+      <ul>
+        <li>
+          <p>lorem 2</p>
+        </li>
+        <li>
+          <p>lorem 3</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 인접 형제 선택자 -->
+    <h1>lorem 1</h1>
+    <h2>lorem 2</h2>
+    <!-- 바로 뒤에 오는 h2만 적용 -->
+
+    <!-- 일반 형제 선택자 -->
+    <h1>lorem1</h1>
+    <h2>lorem2</h2>
+    <h2>lorem3</h2>
+  </body>
+</html>

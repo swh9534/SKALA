@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 그리드 레이아웃</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "main aside"
+          "footer footer";
+        grid-template-columns: 2fr 1fr; /* 메인 2칸, 사이드바 1칸 */
+        grid-template-rows: auto 1fr auto;
+        min-height: 30vh;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      header,
+      footer {
+        background: #000000;
+        color: white;
+        text-align: center;
+        padding: 20px;
+      }
+
+      main {
+        background: #f4f4f4;
+        padding: 20px;
+        grid-area: main;
+      }
+
+      aside {
+        background: #ddd;
+        padding: 20px;
+        grid-area: aside;
+      }
+
+      footer {
+        grid-area: footer;
+      }
+
+      header {
+        grid-area: header;
+      }
+
+      /* 반응형 디자인 */
+      @media (max-width: 768px) {
+        .container {
+          grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="javascript:history.back()" class="back-button">← 뒤로가기</a>
+    <div class="container">
+      <header>헤더</header>
+      <main>
+        <h2>메인 콘텐츠</h2>
+        <p>여기에 주요 콘텐츠가 들어갑니다.</p>
+      </main>
+      <aside>
+        <h2>사이드바</h2>
+        <p>여기는 사이드바입니다.</p>
+      </aside>
+      <footer>푸터</footer>
+    </div>
+  </body>
+</html>
