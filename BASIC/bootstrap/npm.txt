@@ -1,0 +1,4 @@
+현재 폴더에 가서
+npm init -y
+npm install bootstrap
+npm install bootstrap-icons

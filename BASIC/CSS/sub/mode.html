@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>다크 모드 토글</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        text-align: center;
+        padding: 50px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      .radio-group {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      label {
+        font-size: 18px;
+        cursor: pointer;
+      }
+
+      /* 기본 배경색 (화이트 모드) */
+      body {
+        background-color: #ffffff;
+        color: #333;
+      }
+
+      /* :has()를 이용해 라디오 버튼 상태에 따라 배경 변경 */
+      body:has(#dark:checked) {
+        background-color: #222;
+        color: #fff;
+      }
+
+      body:has(#green:checked) {
+        background-color: #2e7d32;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>다크 모드 토글</h1>
+
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="theme" id="white" checked /> 화이트 모드
+      </label>
+      <label> <input type="radio" name="theme" id="dark" /> 다크 모드 </label>
+      <label> <input type="radio" name="theme" id="green" /> 초록 모드 </label>
+    </div>
+  </body>
+</html>
