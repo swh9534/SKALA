@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>여행 계획</title>
+
+        <!-- 부트스트랩 & 부트스트랩 아이콘 CDN -->
+        <link
+            rel="stylesheet"
+            href="../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../node_modules/bootstrap-icons/font/bootstrap-icons.css"
+        />
+
+        <style>
+            body {
+                font-family: "Poppins", sans-serif;
+                background-color: #f8f9fa;
+                padding-top: 80px;
+            }
+            .trip-table {
+                overflow-x: auto;
+            }
+            .list-group-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .delete-btn {
+                border: none;
+                background: none;
+                color: red;
+                font-size: 18px;
+                cursor: pointer;
+            }
+        </style>
+        <!-- 부트스트랩 CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+
+        <!-- 부트스트랩 JS (Popper.js 포함) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            defer
+        ></script>
+
+        <!-- 네비게이션 바 불러오는 스크립트 -->
+        <script src="../loadNavbar.js" defer></script>
+    </head>
+    <body>
+        <div id="navbar-container"></div>
+        <div class="container">
+            <h2 class="mb-4 text-center">
+                <i class="bi bi-geo-alt"></i> 여행 계획
+            </h2>
+
+            <!-- 메인 여행지 입력 -->
+            <div class="mb-3">
+                <label for="main-destination" class="form-label"
+                    ><i class="bi bi-map"></i> 메인 여행지</label
+                >
+                <input
+                    type="text"
+                    class="form-control"
+                    id="main-destination"
+                    placeholder="예: 제주도, 오사카, 뉴욕"
+                />
+            </div>
+
+            <!-- 출발일 & 도착일 입력 -->
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="start-date" class="form-label"
+                        ><i class="bi bi-calendar-date"></i> 출발일</label
+                    >
+                    <input type="date" class="form-control" id="start-date" />
+                </div>
+                <div class="col-md-6">
+                    <label for="end-date" class="form-label"
+                        ><i class="bi bi-calendar-check"></i> 도착일</label
+                    >
+                    <input type="date" class="form-control" id="end-date" />
+                </div>
+            </div>
+
+            <!-- 여행 일정 생성 버튼 -->
+            <button
+                class="btn btn-primary w-100 mb-3"
+                onclick="generateTripPlan()"
+            >
+                <i class="bi bi-list-task"></i> 여행 일정 생성
+            </button>
+
+            <!-- 여행 일정 테이블 -->
+            <div class="trip-table">
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr id="trip-header"></tr>
+                    </thead>
+                    <tbody>
+                        <tr id="trip-details"></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr />
+
+            <!-- 여행 준비물 입력 -->
+            <h4 class="mt-4"><i class="bi bi-backpack"></i> 여행 준비물</h4>
+            <div class="input-group mb-3">
+                <input
+                    type="text"
+                    id="item-input"
+                    class="form-control"
+                    placeholder="준비물 입력 후 추가"
+                />
+                <button class="btn btn-success" onclick="addChecklistItem()">
+                    <i class="bi bi-plus-circle"></i> 추가
+                </button>
+            </div>
+
+            <!-- 준비물 리스트 -->
+            <ul class="list-group mb-4" id="checklist"></ul>
+
+            <!-- 여행 계획 추가 버튼 -->
+            <button class="btn btn-info w-100 mb-3" onclick="addTripCard()">
+                <i class="bi bi-card-list"></i> 여행 계획 추가
+            </button>
+
+            <!-- 종합된 여행 계획 카드 -->
+            <div id="trip-cards"></div>
+        </div>
+
+        <script>
+            function generateTripPlan() {
+                const mainDestination = document
+                    .getElementById("main-destination")
+                    .value.trim();
+                const startDate = new Date(
+                    document.getElementById("start-date").value
+                );
+                const endDate = new Date(
+                    document.getElementById("end-date").value
+                );
+                const tripHeader = document.getElementById("trip-header");
+                const tripDetails = document.getElementById("trip-details");
+
+                tripHeader.innerHTML = "";
+                tripDetails.innerHTML = "";
+
+                if (mainDestination === "") {
+                    alert("메인 여행지를 입력해주세요!");
+                    return;
+                }
+
+                if (isNaN(startDate) || isNaN(endDate) || startDate > endDate) {
+                    alert("출발일과 도착일을 올바르게 입력하세요.");
+                    return;
+                }
+
+                const totalDays =
+                    Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) +
+                    1;
+
+                for (let i = 0; i < totalDays; i++) {
+                    let tripDate = new Date(startDate);
+                    tripDate.setDate(startDate.getDate() + i);
+
+                    const formattedDate = tripDate.toISOString().split("T")[0];
+
+                    let headerCell = document.createElement("th");
+                    headerCell.innerText = `${i + 1}일차 (${formattedDate})`;
+                    tripHeader.appendChild(headerCell);
+
+                    let detailCell = document.createElement("td");
+                    detailCell.innerHTML = `<input type="text" class="form-control" placeholder="세부 일정 입력">`;
+                    tripDetails.appendChild(detailCell);
+                }
+            }
+
+            function addChecklistItem() {
+                const itemInput = document.getElementById("item-input");
+                const itemValue = itemInput.value.trim();
+                if (itemValue === "") return;
+
+                const checklist = document.getElementById("checklist");
+
+                let listItem = document.createElement("li");
+                listItem.className = "list-group-item";
+                listItem.innerHTML = `
+                <span>${itemValue}</span>
+                <button class="delete-btn" onclick="this.parentElement.remove()">&times;</button>
+            `;
+
+                checklist.appendChild(listItem);
+                itemInput.value = ""; // 입력창 초기화
+            }
+
+            function addTripCard() {
+                const mainDestination = document
+                    .getElementById("main-destination")
+                    .value.trim();
+                if (mainDestination === "") {
+                    alert("먼저 여행 계획을 입력하세요!");
+                    return;
+                }
+
+                const tripHeader = document
+                    .getElementById("trip-header")
+                    .querySelectorAll("th");
+                const tripDetails = document
+                    .getElementById("trip-details")
+                    .querySelectorAll("td input");
+
+                let tripSummary = "";
+                tripHeader.forEach((header, index) => {
+                    tripSummary += `<strong>${header.innerText}:</strong> ${
+                        tripDetails[index].value || "일정 없음"
+                    }<br>`;
+                });
+
+                let checklistItems = document.querySelectorAll(
+                    "#checklist .list-group-item span"
+                );
+                let checklistSummary = "<ul>";
+                checklistItems.forEach((item) => {
+                    checklistSummary += `<li>${item.innerText}</li>`;
+                });
+                checklistSummary += "</ul>";
+
+                const tripCards = document.getElementById("trip-cards");
+                let card = document.createElement("div");
+                card.className = "card mt-3";
+                card.innerHTML = `
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><i class="bi bi-geo-alt"></i> ${mainDestination}</h5>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6><i class="bi bi-calendar-week"></i> 여행 일정</h6>
+                                ${tripSummary}
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="bi bi-check2-square"></i> 준비물</h6>
+                                ${checklistSummary}
+                            </div>
+                        </div>
+                        <button class="btn btn-danger btn-sm mt-3 float-end" onclick="this.closest('.card').remove()">
+                            <i class="bi bi-trash"></i> 삭제
+                        </button>
+                    </div>
+                `;
+
+                tripCards.appendChild(card);
+
+                // 입력 필드 초기화
+                document.getElementById("main-destination").value = "";
+                document.getElementById("start-date").value = "";
+                document.getElementById("end-date").value = "";
+                document.getElementById("trip-header").innerHTML = "";
+                document.getElementById("trip-details").innerHTML = "";
+                document.getElementById("checklist").innerHTML = "";
+            }
+        </script>
+    </body>
+</html>
