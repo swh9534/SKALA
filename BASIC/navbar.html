@@ -1,7 +1,17 @@
-<!-- navbar.html -->
+<!-- 🔹 네비게이션 바 -->
 <nav class="navbar bg-light fixed-top">
-    <div class="container-fluid">
-        <!-- 햄버거 버튼 -->
+    <div
+        class="container-fluid d-flex justify-content-between align-items-center"
+    >
+        <!-- 🔙 뒤로 가기 버튼 -->
+        <button class="btn btn-outline-primary" onclick="history.back();">
+            ← 뒤로
+        </button>
+
+        <!-- 🔷 웹사이트 제목 -->
+        <span class="navbar-brand">내 웹사이트</span>
+
+        <!-- ☰ 햄버거 버튼 -->
         <button
             class="btn btn-primary"
             type="button"
@@ -11,13 +21,12 @@
         >
             ☰
         </button>
-        <span class="navbar-brand mx-auto">내 웹사이트</span>
     </div>
 </nav>
 
 <!-- 🔹 Offcanvas 메뉴 -->
 <div
-    class="offcanvas offcanvas-start"
+    class="offcanvas offcanvas-end"
     tabindex="-1"
     id="offcanvasMenu"
     aria-labelledby="offcanvasMenuLabel"
@@ -33,7 +42,9 @@
     </div>
     <div class="offcanvas-body">
         <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action home-link"
+            <a
+                href="main.html"
+                class="list-group-item list-group-item-action active"
                 >홈</a
             >
             <a

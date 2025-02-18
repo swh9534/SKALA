@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blueno</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        ></script>
+        <script defer src="loadNavbar.js"></script>
+        <style>
+            body {
+                font-family: "Poppins", sans-serif;
+                background-color: #f8f9fa;
+                padding-top: 80px;
+            }
+            .card-hover {
+                transition: transform 0.2s ease-in-out,
+                    box-shadow 0.2s ease-in-out;
+                cursor: pointer;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            }
+            /* 리스트 그룹 스타일 */
+            .custom-list-group {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr); /* 기본적으로 한 줄 */
+                gap: 5px;
+                min-height: 200px; /* 최소 높이 설정 (5개 아이템 기준) */
+            }
+
+            /* 아이템 개수가 5개 초과하면 두 열로 변경 */
+            .custom-list-group.multi-column {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* 리스트 아이템 기본 스타일 */
+            .list-group-item {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <script>
+        // 리스트 아이템 개수가 5개 이상이면 두 열로 변경
+        document.addEventListener("DOMContentLoaded", function () {
+            document.querySelectorAll(".custom-list-group").forEach((list) => {
+                if (list.children.length > 5) {
+                    list.classList.add("multi-column");
+                }
+            });
+        });
+    </script>
+    <body>
+        <!-- 네비게이션 바 -->
+        <div id="navbar-container"></div>
+
+        <div class="container mt-5">
+            <h1 class="text-center mb-4">Basic Web Programming</h1>
+
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <!-- Bootstrap 카드 -->
+                <div class="col">
+                    <div
+                        class="card card-hover"
+                        onclick="location.href='bootstrap/index.html'"
+                    >
+                        <div class="card-body">
+                            <h5 class="card-title">Bootstrap</h5>
+                            <p class="card-text">부트스트랩 관련 예제</p>
+                            <ul
+                                class="list-group custom-list-group"
+                                id="bootstrap-list"
+                            >
+                                <a
+                                    href="bootstrap/sub/flex.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    반응형
+                                </a>
+                                <a
+                                    href="bootstrap/sub/grid.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    그리드
+                                </a>
+                                <a
+                                    href="bootstrap/sub/form.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    폼
+                                </a>
+                                <a
+                                    href="bootstrap/sub/planner.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    여행 플래너
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HTML 카드 -->
+                <div class="col">
+                    <div
+                        class="card card-hover"
+                        onclick="location.href='html/index.html'"
+                    >
+                        <div class="card-body">
+                            <h5 class="card-title">CSS</h5>
+                            <p class="card-text">CSS 관련 예제</p>
+                            <ul
+                                class="list-group custom-list-group"
+                                id="bootstrap-list"
+                            >
+                                <a
+                                    href="css/sub/text.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    텍스트
+                                </a>
+                                <a
+                                    href="css/sub/virtual.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    가상 요소
+                                </a>
+                                <a
+                                    href="css/sub/selector.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    선택자
+                                </a>
+                                <a
+                                    href="css/sub/reactive.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    반응형
+                                </a>
+                                <a
+                                    href="css/sub/mode.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    모드 변경
+                                </a>
+                                <a
+                                    href="css/sub/layout.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    레이아웃
+                                </a>
+                                <a
+                                    href="css/sub/animation.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    애니메이션
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS 카드 -->
+                <div class="col">
+                    <div
+                        class="card card-hover"
+                        onclick="location.href='html/index.html'"
+                    >
+                        <div class="card-body">
+                            <h5 class="card-title">HTML</h5>
+                            <p class="card-text">HTML 관련 예제</p>
+                            <ul
+                                class="list-group custom-list-group"
+                                id="bootstrap-list"
+                            >
+                                <a
+                                    href="html/sub/text.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    텍스트
+                                </a>
+                                <a
+                                    href="html/sub/list.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    리스트
+                                </a>
+                                <a
+                                    href="html/sub/table.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    테이블
+                                </a>
+                                <a
+                                    href="html/sub/timetable.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    시간표
+                                </a>
+                                <a
+                                    href="html/sub/login.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    로그인
+                                </a>
+                                <a
+                                    href="html/sub/signup.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    회원가입
+                                </a>
+                                <a
+                                    href="html/sub/news.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    뉴스
+                                </a>
+                                <a
+                                    href="html/sub/gildong.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    홍길동
+                                </a>
+                                <a
+                                    href="html/sub/gildongtable.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    홍길동 - 행적
+                                </a>
+                                <a
+                                    href="html/sub/gildongweb.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    홍길동 - 웹
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JavaScript 카드 -->
+                <div class="col">
+                    <div
+                        class="card card-hover"
+                        onclick="location.href='js/index.html'"
+                    >
+                        <div class="card-body">
+                            <h5 class="card-title">JS</h5>
+                            <p class="card-text">JS 관련 예제</p>
+                            <ul
+                                class="list-group custom-list-group"
+                                id="bootstrap-list"
+                            >
+                                <a
+                                    href="js/sub/example1.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    예제 1
+                                </a>
+                                <a
+                                    href="js/sub/example2.html"
+                                    class="list-group-item list-group-item-action"
+                                >
+                                    예제 2
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
