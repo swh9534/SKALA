@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let num;
+            num = 30;
+
+            const boolean1 = true;
+            const boolean2 = 10 < 20;
+
+            let num1 = 10;
+            let num2 = 0.1;
+            sum = num1 + num2;
+
+            const studentScore = [80, 70, 90, 60];
+            studentScore.push(33.3);
+
+            const studentScore2 = {
+                kor: 80,
+                eng: 90,
+                math: 70,
+                sci: 60,
+            };
+
+            let st, // const 선언 시에는 값을 지정을 해주어야함.
+                nt = null,
+                ud = undefined;
+
+            let str1 = "hello",
+                str2 = `i \'am\' boy`;
+
+            let sum1 = "합계는 '3'",
+                sum2 = `합계는 "3"`;
+
+            console.log("num: ", num);
+            console.log("bool: ", boolean1, boolean2);
+            console.log(sum);
+            console.log(studentScore[1], studentScore[3]);
+            console.table(studentScore);
+            console.log(
+                studentScore2.kor,
+                studentScore2[`math`],
+                studentScore2["eng"]
+            );
+            console.log(studentScore2);
+            console.log("st, nt, ud :", st, nt, ud);
+            console.log(st == nt); // undefined = null
+            console.log(str1, str2);
+            console.log(sum1, sum2);
+        </script>
+    </body>
+</html>
