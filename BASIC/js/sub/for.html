@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>여러 개의 스크립트</title>
+    </head>
+    <body>
+        <!-- 📌 1. 배열 입력 & 출력 -->
+        <h2>배열 입력</h2>
+        <label for="arrayInput">배열 입력 (예: apple,banana,grape):</label>
+        <input type="text" id="arrayInput" />
+        <button onclick="printArray()">출력</button>
+        <p id="arrayResult"></p>
+        <hr />
+
+        <!-- 📌 2. 로또 번호 생성 -->
+        <h2>로또 번호 생성기</h2>
+        <button onclick="generateLotto()">로또 번호 생성</button>
+        <p id="lottoResult"></p>
+        <hr />
+
+        <!-- 📌 3. 빈칸 (추가 기능 자리) -->
+        <h2>추가 기능</h2>
+        <button onclick="extraFunction()">추가 기능 실행</button>
+        <p id="extraResult">여기에 새로운 기능을 추가하세요!</p>
+        <hr />
+
+        <script>
+            // ✅ 배열 입력 & 출력 기능
+            function printArray() {
+                let inputText = document.getElementById("arrayInput").value;
+                let items = inputText.split(",").map((item) => item.trim());
+
+                let resultText = "";
+                for (let i = 0; i < items.length; i++) {
+                    resultText += "- " + items[i] + "<br>";
+                    if (items[i] === "바나나") {
+                        break;
+                    }
+                }
+
+                document.getElementById("arrayResult").innerHTML = resultText;
+            }
+
+            // ✅ 로또 번호 생성기
+            function generateLotto() {
+                let numbers = [];
+                while (numbers.length < 6) {
+                    let randNum = Math.floor(Math.random() * 45) + 1;
+                    if (!numbers.includes(randNum)) {
+                        numbers.push(randNum);
+                    }
+                }
+                document.getElementById(
+                    "lottoResult"
+                ).textContent = `로또 번호: ${numbers.join(", ")}`;
+            }
+
+            // ✅ 추가 기능 (현재는 빈칸, 원하는 기능을 넣으면 됨)
+            function extraFunction() {
+                document.getElementById("extraResult").textContent =
+                    "새로운 기능을 추가해보세요!";
+            }
+        </script>
+    </body>
+</html>

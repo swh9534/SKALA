@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let score = 85;
+            if (score >= 80) {
+                console.log("합격");
+            } else {
+                console.log("불합격");
+            }
+
+            let age = 55;
+            if (age < 20) {
+                console.log("소인");
+            } else if (age < 60) {
+                console.log("중인");
+            } else {
+                console.log("대인");
+            }
+
+            function checkDay() {
+                let day = document.getElementById("dayInput").value.toLowerCase(); // 입력값을 소문자로 변환
+
+                let resultText;
+                switch (day) {
+                    case "mon":
+                        resultText = "월요일";
+                        break;
+                    case "tue":
+                        resultText = "화요일";
+                        break;
+                    case "wed":
+                        resultText = "수요일";
+                        break;
+                    case "thu":
+                        resultText = "목요일";
+                        break;
+                    case "fri":
+                        resultText = "금요일";
+                        break;
+                    case "sat":
+                        resultText = "토요일";
+                        break;
+                    case "sun":
+                        resultText = "일요일";
+                        break;
+                    default:
+                        resultText = "올바른 요일을 입력하세요 (예: mon, tue)";
+                }
+
+                document.getElementById("result").textContent = resultText; // 결과 출력
+            }
+        </script>
+        </script>
+    </body>
+</html>

@@ -1,12 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>멋진 링크 페이지</title>
+        <style>
+            /* ✅ 전체 페이지 스타일 */
+            body {
+                font-family: "Arial", sans-serif;
+                background: linear-gradient(135deg, #1e3c72, #2a5298);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            /* ✅ 링크 컨테이너 */
+            .container {
+                text-align: center;
+                background: rgba(255, 255, 255, 0.1);
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(10px);
+            }
+
+            /* ✅ 링크 버튼 스타일 */
+            .link {
+                display: block;
+                text-decoration: none;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+                background: rgba(255, 255, 255, 0.2);
+                padding: 15px 30px;
+                border-radius: 8px;
+                margin: 10px 0;
+                transition: 0.3s;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            /* ✅ 마우스 호버 효과 */
+            .link:hover {
+                transform: scale(1.05);
+                background: rgba(255, 255, 255, 0.4);
+            }
+        </style>
     </head>
     <body>
-        <a href="sub/basic.html">1____________1</a><br />
-        <a href="sub/ variable.html">2____________2</a>
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 20px">JS 실습 페이지</h2>
+            <a href="sub/basic.html" class="link">1. 기본 개념</a>
+            <a href="sub/basic2.html" class="link">2. 기본 개념</a>
+            <a href="sub/variable.html" class="link">3. 변수</a>
+            <a href="sub/for.html" class="link">4. 반복문</a>
+            <a href="sub/array.html" class="link">5. 배열</a>
+            <a href="sub/func.html" class="link">6. 함수</a>
+            <a href="sub/skcc.html" class="link">7. sk 로그인</a>
+        </div>
     </body>
 </html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>비구조화 할당 예제</title>
+        <style>
+            body {
+                font-family: "Arial", sans-serif;
+                background: linear-gradient(135deg, #1e3c72, #2a5298);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                color: white;
+            }
+            .container {
+                text-align: center;
+            }
+            .card {
+                background: rgba(255, 255, 255, 0.2);
+                padding: 15px;
+                margin: 10px;
+                border-radius: 10px;
+                width: 250px;
+                text-align: center;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                transition: 0.3s;
+            }
+            .card:hover {
+                transform: scale(1.05);
+            }
+            button {
+                background: #ffcc00;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-top: 20px;
+                transition: 0.3s;
+            }
+            button:hover {
+                background: #ffdd44;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>동적 카드 생성 (비구조화 할당)</h2>
+            <button
+                onclick="addCard({ title: '🚀 새로운 카드', description: '이것은 동적으로 추가된 카드입니다!', icon: '✨' })"
+            >
+                카드 추가하기
+            </button>
+            <div id="cardContainer"></div>
+        </div>
+
+        <script>
+            function addCard({ title, description, icon }) {
+                // 카드 컨테이너 선택
+                let container = document.getElementById("cardContainer");
+
+                // 새로운 카드 요소 생성
+                let card = document.createElement("div");
+                card.className = "card";
+                card.innerHTML = `<h3>${icon} ${title}</h3><p>${description}</p>`;
+
+                // 카드 추가
+                container.appendChild(card);
+            }
+            function addNumbers(...args) {
+                // 배열이 들어왔을 경우 펼쳐주기
+                let numbers = args.flat();
+
+                // 숫자만 필터링
+                numbers = numbers.filter((num) => typeof num === "number");
+
+                // 예외 처리: 유효한 숫자가 없을 경우
+                if (numbers.length === 0) {
+                    return "숫자가 포함되어 있지 않습니다!";
+                }
+
+                // 합계 계산
+                let sum = numbers.reduce((acc, cur) => acc + cur, 0);
+
+                // 추가적인 정보 제공
+                return {
+                    sum: sum,
+                    average: sum / numbers.length,
+                    min: Math.min(...numbers),
+                    max: Math.max(...numbers),
+                    count: numbers.length,
+                };
+            }
+
+            console.log(addNumbers(1, 2, 3));
+            console.log(addNumbers(4, 5, 6, 7, "hello", true));
+            console.log(addNumbers([10, 20, 30], 40, 50));
+            console.log(addNumbers("abc", {}, []));
+            
+        </script>
+    </body>
+</html>

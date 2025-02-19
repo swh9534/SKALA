@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>대시보드</title>
+        <link rel="stylesheet" href="skmain.css" />
+    </head>
+    <body>
+        <nav class="navbar">
+            <h1>대시보드</h1>
+            <button onclick="logout()">로그아웃</button>
+        </nav>
+
+        <div class="container">
+            <div class="profile-card">
+                <img src="profile.png" alt="프로필 이미지" />
+                <h2>신우현</h2>
+                <p>SK C&C AI Leader Academy(SKALA) (2회차)</p>
+                <p>교육기간: 2025-02-03 ~ 2025-07-08</p>
+            </div>
+
+            <div class="grid-container">
+                <div class="grid-item">출결체크</div>
+                <div class="grid-item">출결현황</div>
+                <div class="grid-item">출석인정요청</div>
+                <div class="grid-item">참여/출결확인서</div>
+                <div class="grid-item">휴가질병현황</div>
+                <div class="grid-item">확인서류</div>
+                <div class="grid-item">신상기록부</div>
+                <div class="grid-item">학습안내서</div>
+                <div class="grid-item highlight">설문관리</div>
+                <div class="grid-item">공지 및 건의함</div>
+                <div class="grid-item">과정 게시판</div>
+                <div class="grid-item">대한상의에 바란다</div>
+            </div>
+        </div>
+
+        <script>
+            function logout() {
+                alert("로그아웃 되었습니다.");
+                window.location.href = "skcc.html";
+            }
+        </script>
+    </body>
+</html>
