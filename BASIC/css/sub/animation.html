@@ -1,108 +1,110 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS 애니메이션 실습</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS 애니메이션 실습</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: #f4f4f4;
-      }
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-color: #f4f4f4;
+            }
 
-      /* 박스 기본 스타일 */
-      .box {
-        width: 100px;
-        height: 100px;
-        background-color: #2196f3;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-size: 20px;
-        border-radius: 10px;
-        transition: background-color 1s ease-in-out, transform 0.5s ease-in-out;
-      }
+            /* 박스 기본 스타일 */
+            .box {
+                width: 100px;
+                height: 100px;
+                background-color: #2196f3;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 20px;
+                border-radius: 10px;
+                transition: background-color 1s ease-in-out,
+                    transform 0.5s ease-in-out;
+            }
 
-      /* 마우스를 올리면 천천히 노란색으로 변화 */
-      .box:hover {
-        background-color: yellow;
-        color: black;
-      }
+            /* 마우스를 올리면 천천히 노란색으로 변화 */
+            .box:hover {
+                background-color: yellow;
+                color: black;
+            }
 
-      /* 회전 버튼 클릭 시 */
-      .rotate {
-        transform: rotate(360deg);
-      }
+            /* 회전 버튼 클릭 시 */
+            .rotate {
+                transform: rotate(360deg);
+            }
 
-      /* 확대 버튼 클릭 시 */
-      .scale {
-        transform: scale(1.5);
-      }
+            /* 확대 버튼 클릭 시 */
+            .scale {
+                transform: scale(1.5);
+            }
 
-      .buttons {
-        margin-top: 20px;
-      }
+            .buttons {
+                margin-top: 20px;
+            }
 
-      button {
-        padding: 10px 20px;
-        font-size: 16px;
-        margin: 5px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: background 0.3s;
-      }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                margin: 5px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: background 0.3s;
+            }
 
-      .btn-rotate {
-        background-color: #ff9800;
-        color: white;
-      }
+            .btn-rotate {
+                background-color: #ff9800;
+                color: white;
+            }
 
-      .btn-rotate:hover {
-        background-color: #e68900;
-      }
+            .btn-rotate:hover {
+                background-color: #e68900;
+            }
 
-      .btn-scale {
-        background-color: #4caf50;
-        color: white;
-      }
+            .btn-scale {
+                background-color: #4caf50;
+                color: white;
+            }
 
-      .btn-scale:hover {
-        background-color: #3e8e41;
-      }
-    </style>
-  </head>
-  <body>
-    <a href="javascript:history.back()" class="back-button">← 뒤로가기</a><br />
-    <div class="box" id="box">BOX</div>
+            .btn-scale:hover {
+                background-color: #3e8e41;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="javascript:history.back()" class="back-button">← 뒤로가기</a
+        ><br />
+        <div class="box" id="box">BOX</div>
 
-    <div class="buttons">
-      <button class="btn-rotate" onclick="rotateBox()">회전</button>
-      <button class="btn-scale" onclick="scaleBox()">확대</button>
-    </div>
+        <div class="buttons">
+            <button class="btn-rotate" onclick="rotateBox()">회전</button>
+            <button class="btn-scale" onclick="scaleBox()">확대</button>
+        </div>
 
-    <script>
-      function rotateBox() {
-        let box = document.getElementById("box");
-        box.classList.toggle("rotate"); // 클릭할 때마다 토글 (ON/OFF)
-      }
+        <script>
+            function rotateBox() {
+                let box = document.getElementById("box");
+                box.classList.toggle("rotate"); // 클릭할 때마다 토글 (ON/OFF)
+            }
 
-      function scaleBox() {
-        let box = document.getElementById("box");
-        box.classList.toggle("scale"); // 클릭할 때마다 토글 (ON/OFF)
-      }
-    </script>
-  </body>
+            function scaleBox() {
+                let box = document.getElementById("box");
+                box.classList.toggle("scale"); // 클릭할 때마다 토글 (ON/OFF)
+            }
+        </script>
+    </body>
 </html>
