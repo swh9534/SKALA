@@ -17,7 +17,7 @@
             body {
                 font-family: "Poppins", sans-serif;
                 background-color: #f8f9fa;
-                padding-top: 80px;
+                padding-top: 50px;
             }
             .card-hover {
                 transition: transform 0.2s ease-in-out,
@@ -33,7 +33,7 @@
                 display: grid;
                 grid-template-columns: repeat(1, 1fr); /* 기본적으로 한 줄 */
                 gap: 5px;
-                min-height: 200px; /* 최소 높이 설정 (5개 아이템 기준) */
+                min-height: 230px; /* 최소 높이 설정 (5개 아이템 기준) */
             }
 
             /* 아이템 개수가 5개 초과하면 두 열로 변경 */
@@ -44,6 +44,7 @@
             /* 리스트 아이템 기본 스타일 */
             .list-group-item {
                 text-align: center;
+                max-height: 40px;
             }
         </style>
     </head>

@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     let navbarContainer = document.getElementById("navbar-container");
 
-    // 현재 문서의 경로 확인
-    let depth = (window.location.pathname.match(/\//g) || []).length;
+    // 현재 문서의 경로 깊이 확인
+    let pathSegments = window.location.pathname.split("/").filter(Boolean);
+    let depth = pathSegments.length;
 
     // navbar.html의 상대 경로 설정
-    let navbarPath = depth > 1 ? "../../navbar.html" : "../navbar.html";
+    let navbarPath = "../".repeat(depth) + "navbar.html";
 
     fetch(navbarPath)
         .then((response) => response.text())
@@ -15,8 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // 🔹 홈 버튼 경로 자동 조정
             let homeLink = navbarContainer.querySelector(".home-link");
             if (homeLink) {
-                let currentPath = window.location.pathname;
-                let homePath = depth > 1 ? "../../main.html" : "../main.html";
+                let homePath = "../".repeat(depth) + "main.html";
                 homeLink.href = homePath;
             }
 
