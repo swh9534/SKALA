@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JSON 실습</title>
+        <style>
+            .person-container {
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin: 10px 0;
+                padding: 10px;
+            }
+            .delete-btn {
+                color: red;
+                cursor: pointer;
+                margin-left: 10px;
+                border: none;
+                background: none;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>JSON.stringify & JSON.parse 실습</h2>
+        <button onclick="convertToJSON()">객체를 JSON 문자열로 변환</button>
+        <button onclick="parseJSON()">JSON 문자열을 객체로 변환</button>
+        <p><strong>출력:</strong></p>
+        <pre id="output"></pre>
+
+        <script>
+            const person = {
+                name: "홍길동",
+                age: 30,
+                job: "의적",
+                skills: ["검술", "전략", "분신"],
+                shadow: "검은색",
+            };
+
+            let jsonString = "";
+
+            function convertToJSON() {
+                jsonString = JSON.stringify(person, null, 4);
+                document.getElementById("output").textContent = jsonString;
+                console.log("JSON.stringify 결과:", jsonString);
+            }
+
+            function parseJSON() {
+                if (jsonString) {
+                    const parsedObject = JSON.parse(jsonString);
+                    document.getElementById("output").textContent =
+                        JSON.stringify(parsedObject, null, 4);
+                    console.log("JSON.parse 결과:", parsedObject);
+                } else {
+                    document.getElementById("output").textContent =
+                        "먼저 JSON 문자열을 생성하세요.";
+                    console.log(
+                        "JSON.parse 실행 실패: 먼저 JSON 문자열을 생성하세요."
+                    );
+                }
+            }
+        </script>
+
+        <hr />
+
+        <h2>분신 생성 및 속성 관리</h2>
+        <button onclick="createClone()">분신 생성</button>
+        <div id="clones"></div>
+
+        <script>
+            let clones = [];
+
+            function deepCopy(obj) {
+                return JSON.parse(JSON.stringify(obj)); // 깊은 복사 수행
+            }
+
+            function createClone() {
+                const newClone = deepCopy(person);
+                newClone.name += ` 분신${clones.length + 2}`;
+                clones.push(newClone);
+                console.log("새로운 분신 생성:", newClone);
+                renderClones();
+            }
+
+            function renderClones() {
+                const container = document.getElementById("clones");
+                container.innerHTML = "";
+                clones.forEach((clone, index) => {
+                    const div = document.createElement("div");
+                    div.className = "person-container";
+                    div.innerHTML = `
+                    <h3>${clone.name}</h3>
+                    ${generatePropertiesHTML(clone, index)}
+                    <input type="text" id="skillInput${index}" placeholder="새로운 스킬 추가" />
+                    <button onclick="addSkill(${index})">추가</button>
+                `;
+                    container.appendChild(div);
+                });
+            }
+
+            function generatePropertiesHTML(clone, index) {
+                let html = "";
+                for (let key in clone) {
+                    if (Array.isArray(clone[key])) {
+                        html += `<p><strong>${key}:</strong> ${clone[key].join(
+                            ", "
+                        )}</p>`;
+                    } else {
+                        html += `<p><strong>${key}:</strong> ${clone[key]} 
+                        <button class="delete-btn" onclick="deleteProperty(${index}, '${key}')">X</button>
+                    </p>`;
+                    }
+                }
+                return html;
+            }
+
+            function deleteProperty(index, property) {
+                if (clones[index].hasOwnProperty(property)) {
+                    delete clones[index][property];
+                    console.log(
+                        `분신${index + 2}의 '${property}' 속성이 삭제됨:`,
+                        clones[index]
+                    );
+                    renderClones();
+                }
+            }
+
+            function addSkill(index) {
+                const input = document.getElementById(`skillInput${index}`);
+                if (input.value.trim()) {
+                    clones[index].skills.push(input.value.trim());
+                    console.log(
+                        `분신${index + 2}의 새로운 스킬 추가:`,
+                        clones[index]
+                    );
+                    input.value = "";
+                    renderClones();
+                }
+            }
+        </script>
+
+        <hr />
+
+        <h2>랜덤 6자리 숫자 생성</h2>
+        <button onclick="generateRandomNumber()">랜덤 숫자 생성</button>
+        <p><strong>랜덤 숫자:</strong> <span id="randomNumber">-</span></p>
+
+        <script>
+            function generateRandomNumber() {
+                let randomNumber = Math.floor(100000 + Math.random() * 900000);
+                document.getElementById("randomNumber").textContent =
+                    randomNumber;
+                console.log("생성된 랜덤 숫자:", randomNumber);
+            }
+        </script>
+    </body>
+</html>
