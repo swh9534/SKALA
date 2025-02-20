@@ -3,9 +3,16 @@ body {
 }
 
 .container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+
+    /* ✅ 가로 최대 크기 지정 */
+    max-width: 400px; /* 적절한 값으로 조절 가능 */
+    width: 90%; /* 화면이 작을 때도 적절한 크기로 조절됨 */
 }
 
 h1 {
