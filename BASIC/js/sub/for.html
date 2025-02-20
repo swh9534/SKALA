@@ -4,8 +4,28 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>여러 개의 스크립트</title>
+        <style>
+            body {
+                padding-top: 70px;
+            }
+        </style>
+        <!-- 부트스트랩 CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+
+        <!-- 부트스트랩 JS (Popper.js 포함) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            defer
+        ></script>
+
+        <!-- 네비게이션 바 불러오는 스크립트 -->
+        <script src="../../loadNavbar.js" defer></script>
     </head>
     <body>
+        <div id="navbar-container"></div>
         <!-- 📌 1. 배열 입력 & 출력 -->
         <h2>배열 입력</h2>
         <label for="arrayInput">배열 입력 (예: apple,banana,grape):</label>

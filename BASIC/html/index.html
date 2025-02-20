@@ -1,94 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SKALA</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKALA</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding-top: 80px;
+            }
 
-      .grid-item {
-        padding: 15px;
-        border: 2px solid #ddd;
-        border-radius: 8px;
-        background-color: #f9f9f9;
-      }
+            .grid-item {
+                padding: 15px;
+                border: 2px solid #ddd;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
 
-      .google-container {
-        max-width: 300px;
-        margin: 20px auto;
-        text-align: center;
-      }
+            .google-container {
+                max-width: 300px;
+                margin: 20px auto;
+                text-align: center;
+            }
 
-      .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
-        max-width: 900px;
-        margin: 0 auto;
-        text-align: left;
-      }
+            .grid-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 20px;
+                max-width: 900px;
+                margin: 0 auto;
+                text-align: left;
+            }
 
-      h2 {
-        margin: 10px 0;
-      }
+            h2 {
+                margin: 10px 0;
+            }
 
-      h3 {
-        margin-bottom: 10px;
-      }
+            h3 {
+                margin-bottom: 10px;
+            }
 
-      a {
-        text-decoration: none;
-        color: #007bff;
-      }
+            a {
+                text-decoration: none;
+                color: #007bff;
+            }
 
-      a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- 구글 페이지 (맨 위, 테두리 추가) -->
-    <div class="google-container grid-item">
-      <h3>🔍 검색</h3>
-      <a href="https://google.com" target="_blank">
-        <h2>1. 구글 페이지</h2>
-      </a>
-    </div>
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+        <!-- 부트스트랩 CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
 
-    <!-- 3그룹을 그리드로 정렬 -->
-    <div class="grid-container">
-      <!-- 왼쪽 그룹 -->
-      <div class="grid-item">
-        <h3>📄 텍스트 관련</h3>
-        <a href="sub/text.html"><h2>2. 텍스트 문서</h2></a>
-        <a href="sub/gildong.html"><h2>3. 홍길동 페이지</h2></a>
-        <a href="sub/list.html"><h2>4. 리스트 페이지</h2></a>
-      </div>
+        <!-- 부트스트랩 JS (Popper.js 포함) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            defer
+        ></script>
 
-      <!-- 중앙 그룹 -->
-      <div class="grid-item">
-        <h3>📊 테이블 관련</h3>
-        <a href="sub/table.html"><h2>5. 테이블 페이지</h2></a>
-        <a href="sub/timetable.html"><h2>6. 시간표 페이지</h2></a>
-      </div>
+        <!-- 네비게이션 바 불러오는 스크립트 -->
+        <script src="../../loadNavbar.js" defer></script>
+    </head>
+    <body>
+        <div id="navbar-container"></div>
+        <!-- 구글 페이지 (맨 위, 테두리 추가) -->
+        <div class="google-container grid-item">
+            <h3>🔍 검색</h3>
+            <a href="https://google.com" target="_blank">
+                <h2>1. 구글 페이지</h2>
+            </a>
+        </div>
 
-      <!-- 오른쪽 그룹 -->
-      <div class="grid-item">
-        <h3>🔑 로그인 & 회원가입</h3>
-        <a href="sub/login.html"><h2>7. 로그인 페이지</h2></a>
-        <a href="sub/signup.html"><h2>8. 회원가입 페이지</h2></a>
-      </div>
+        <!-- 3그룹을 그리드로 정렬 -->
+        <div class="grid-container">
+            <!-- 왼쪽 그룹 -->
+            <div class="grid-item">
+                <h3>📄 텍스트 관련</h3>
+                <a href="sub/text.html"><h2>2. 텍스트 문서</h2></a>
+                <a href="sub/gildong.html"><h2>3. 홍길동 페이지</h2></a>
+                <a href="sub/list.html"><h2>4. 리스트 페이지</h2></a>
+            </div>
 
-      <div class="grid-item">
-        <h3>🧑🏻‍💻 웹 페이지</h3>
-        <a href="sub/news.html"><h2>8. 뉴스 페이지</h2></a>
-        <a href="sub/gildongweb.html"><h2>9. 홍길동 소개 페이지</h2></a>
-        <a href=""><h2>10. TEST</h2></a>
-      </div>
-    </div>
-  </body>
+            <!-- 중앙 그룹 -->
+            <div class="grid-item">
+                <h3>📊 테이블 관련</h3>
+                <a href="sub/table.html"><h2>5. 테이블 페이지</h2></a>
+                <a href="sub/timetable.html"><h2>6. 시간표 페이지</h2></a>
+            </div>
+
+            <!-- 오른쪽 그룹 -->
+            <div class="grid-item">
+                <h3>🔑 로그인 & 회원가입</h3>
+                <a href="sub/login.html"><h2>7. 로그인 페이지</h2></a>
+                <a href="sub/signup.html"><h2>8. 회원가입 페이지</h2></a>
+            </div>
+
+            <div class="grid-item">
+                <h3>🧑🏻‍💻 웹 페이지</h3>
+                <a href="sub/news.html"><h2>8. 뉴스 페이지</h2></a>
+                <a href="sub/gildongweb.html"><h2>9. 홍길동 소개 페이지</h2></a>
+                <a href=""><h2>10. TEST</h2></a>
+            </div>
+        </div>
+    </body>
 </html>

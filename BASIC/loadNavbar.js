@@ -13,14 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((data) => {
             navbarContainer.innerHTML = data;
 
-            // 🔹 홈 버튼 경로 자동 조정
+            // 홈 버튼 경로 자동 조정
             let homeLink = navbarContainer.querySelector(".home-link");
             if (homeLink) {
                 let homePath = "../".repeat(depth) + "main.html";
                 homeLink.href = homePath;
             }
 
-            // 🔹 부트스트랩 기능 다시 활성화
+            // 부트스트랩 기능 다시 활성화
             setTimeout(() => {
                 if (typeof bootstrap !== "undefined") {
                     let dropdowns =
