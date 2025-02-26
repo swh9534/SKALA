@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME=sk000
+NAME=sk044
 IMAGE_NAME="webserver"
 VERSION="1.0.0"
 
