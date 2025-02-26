@@ -1,0 +1,18 @@
+# Base image로 busybox 사용
+FROM busybox:latest
+
+# 작업 디렉토리 설정
+WORKDIR /app
+
+# 초기 텍스트 파일 복사 (기본 동작용)
+COPY info.txt /app/my-info.txt
+
+# 스크립트 복사
+COPY start.sh /app/start.sh
+
+# 스크립트 실행 권한 추가
+RUN chmod +x /app/start.sh
+
+# 컨테이너 시작 시 script.sh 실행
+CMD ["/app/start.sh"]
+

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: skala-configmap
+  namespace: skala-practice
+data:
+  skala-info: "skala 25 year 1 phase"
