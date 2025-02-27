@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sk044-first-deploy-test
+  namespace: skala-practice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sk044-first-deploy-test
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '8080'
+        prometheus.io/path: '/prometheus'
+        update: 25df376ca9a4dfa0c152bb10cc351708
+      labels:
+        app: sk044-first-deploy-test
+    spec:
+      serviceAccountName: default
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: skala-k8s-practice
+                operator: In
+                values:
+                - "yes"
+      volumes:
+      - name: skala-config-volume
+        configMap:
+          name: skala-configmap
+      containers:
+      - name: webserver
+        image: amdp-registry.skala-ai.com/skala25a/sk044-webserver:2.0.0
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: skala-config-volume
+          mountPath: /etc/skala
+        env:
+        - name: LOGGING_LEVEL
+          value: DEBUG
+        - name: USER_NAME
+          value: sk044
+        - name: SKALA_INFO
+          valueFrom:
+            configMapKeyRef:
+              name: skala-configmap
+              key: skala-info
+      tolerations:
+      - effect: 
+        key: skala-k8s-practice
+        operator: Equal
+        value: "yes"

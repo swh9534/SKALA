@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sk044-pod-test
+  namespace: skala-practice
+  labels:
+    app: sk044-pod-test
+spec:
+  serviceAccountName: default
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: skala-k8s-practice
+            operator: In
+            values:
+            - "yes"
+  containers:
+  - name: nginx
+    image:  nginx:mainline-alpine
+    imagePullPolicy: Always
+    env:
+    - name: USER_NAME
+      value: sk044
+  tolerations:
+  - effect: 
+    key: skala-k8s-practice
+    operator: Equal
+    value: "yes"
