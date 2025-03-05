@@ -79,3 +79,7 @@ replay_pid*
 #env.properties
 #*deploy*.yaml
 #*secret*.yaml
+
+
+GenerativeAI/Langchain/chroma_Web
+GenerativeAI/Langchain/docs.jsonl
